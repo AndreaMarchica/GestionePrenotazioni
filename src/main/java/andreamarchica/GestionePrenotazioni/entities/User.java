@@ -1,13 +1,11 @@
 package andreamarchica.GestionePrenotazioni.entities;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.ToString;
 
 import java.util.List;
-
+@Entity
 @Getter
 @ToString
 public class User {
@@ -17,6 +15,7 @@ public class User {
     private String username;
     private String completeName;
     private String email;
+    @OneToMany(mappedBy = "user")
     private List<Booking> bookingList;
 
     public User() {

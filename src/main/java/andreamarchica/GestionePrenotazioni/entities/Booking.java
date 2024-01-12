@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 import java.time.LocalDate;
-
+@Entity
 @Getter
 @ToString
 public class Booking {
@@ -14,7 +14,11 @@ public class Booking {
     private long id;
     private LocalDate bookingDate;
     private LocalDate leavingDate;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
+    @ManyToOne
+    @JoinColumn(name = "location_id")
     private Location location;
 
     public Booking() {

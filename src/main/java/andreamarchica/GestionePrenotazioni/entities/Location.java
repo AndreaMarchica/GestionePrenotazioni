@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 import java.util.List;
-
+@Entity
 @Getter
 @ToString
 public class Location {
@@ -16,7 +16,10 @@ public class Location {
     private LocationType locationType;
     private int maxPeople;
     private  boolean isFree;
+    @OneToMany(mappedBy = "location")
     private List<Booking> bookingList;
+    @ManyToOne
+    @JoinColumn(name = "building_id")
     private  Building building;
 
     public Location() {

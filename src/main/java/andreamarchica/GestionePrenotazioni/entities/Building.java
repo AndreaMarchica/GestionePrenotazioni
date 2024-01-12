@@ -1,13 +1,11 @@
 package andreamarchica.GestionePrenotazioni.entities;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.ToString;
 
 import java.util.List;
-
+@Entity
 @Getter
 @ToString
 public class Building {
@@ -17,6 +15,7 @@ public class Building {
     private String name;
     private String address;
     private String city;
+    @OneToMany(mappedBy = "building")
     private List<Location> locationList;
 
     public Building() {
