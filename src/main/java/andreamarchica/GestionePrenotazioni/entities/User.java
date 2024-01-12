@@ -21,11 +21,10 @@ public class User {
     public User() {
     }
 
-    public User(String username, String completeName, String email, List<Booking> bookingList) {
+    public User(String username, String completeName, String email) {
         this.username = username;
         this.completeName = completeName;
         this.email = email;
-        this.bookingList = bookingList;
     }
 
     public void setUsername(String username) {

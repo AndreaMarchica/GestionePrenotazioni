@@ -28,7 +28,7 @@ public class UsersService {
     public void findByIdAndDelete(long id) {
         User found = this.findById(id);
         usersDao.delete(found);
-        log.info("User con id " + id + " eliminato con successo!");
+        log.info("User with id " + id + " eliminated successfully!");
     }
 
     public void findByIdAndUpdate(long id, User user) {
@@ -38,6 +38,6 @@ public class UsersService {
         found.setEmail(user.getEmail());
         found.setBookingList(user.getBookingList());
         usersDao.save(found);
-        log.info("User con id " + id + " aggiornato con successo!");
+        log.info("User with id " + id + " updated successfully!");
     }
 }

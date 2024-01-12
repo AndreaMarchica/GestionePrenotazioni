@@ -10,7 +10,5 @@ public interface UsersDao extends JpaRepository<User, Long> {
 
     List<User> findByCompleteName(String surname);
 
-    List<User> findByNameIn(List<String> names);
-
     List<User> findByEmail(String email);
 }

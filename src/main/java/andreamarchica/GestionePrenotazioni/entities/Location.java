@@ -13,6 +13,8 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String description;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "location_type")
     private LocationType locationType;
     private int maxPeople;
     private  boolean isFree;
@@ -25,12 +27,11 @@ public class Location {
     public Location() {
     }
 
-    public Location(String description, LocationType locationType, int maxPeople, boolean isFree, List<Booking> bookingList, Building building) {
+    public Location(String description, LocationType locationType, int maxPeople, boolean isFree, Building building) {
         this.description = description;
         this.locationType = locationType;
         this.maxPeople = maxPeople;
         this.isFree = isFree;
-        this.bookingList = bookingList;
         this.building = building;
     }
 

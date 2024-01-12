@@ -10,7 +10,6 @@ import java.util.List;
 
 @Repository
 public interface BookingsDao extends JpaRepository<Booking, Long> {
-    List<Booking> findById(long id);
 
     List<Booking> findByBookingDate(LocalDate date);
 
