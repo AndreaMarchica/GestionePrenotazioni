@@ -1,4 +1,7 @@
 package andreamarchica.GestionePrenotazioni.DAO;
 
-public interface UsersDao {
+import andreamarchica.GestionePrenotazioni.entities.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UsersDao extends JpaRepository<User, Long> {
 }
